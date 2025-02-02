@@ -1,4 +1,6 @@
 import { Tabs } from "expo-router";
+import { TabItem } from "app/navigation/tab-bar/tab-item";
+import { TAB_ITEMS } from "app/navigation/tab-bar/constants";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
@@ -34,7 +36,30 @@ export default function TabLayout() {
           },
           tabBarShowLabel: false,
         }}
-      ></Tabs>
+      >
+        {TAB_ITEMS.map((item) => (
+          <Tabs.Screen
+            key={item.href}
+            name={item.href.split("/").pop()!}
+            options={{
+              title: "",
+              tabBarIcon: ({ focused }) => (
+                <TabItem
+                  {...item}
+                  isFocused={focused}
+                  onPress={() => {
+                    if (item.href.includes("camera")) {
+                      console.log("camera");
+                    } else {
+                      router.push(item.href);
+                    }
+                  }}
+                />
+              ),
+            }}
+          />
+        ))}
+      </Tabs>
       <StatusBar style="dark" />
     </>
   );
