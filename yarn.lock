@@ -3491,6 +3491,77 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@supabase/auth-js@npm:2.67.3":
+  version: 2.67.3
+  resolution: "@supabase/auth-js@npm:2.67.3"
+  dependencies:
+    "@supabase/node-fetch": "npm:^2.6.14"
+  checksum: 10/47471d6492b4f8431eb1c2fcbf514e76ad4340b993864869ece9ada180ee0b07ebf958ff5adabc7e354e41e75825498d95afcd708c13e6ba1b7e876e468bdadf
+  languageName: node
+  linkType: hard
+
+"@supabase/functions-js@npm:2.4.4":
+  version: 2.4.4
+  resolution: "@supabase/functions-js@npm:2.4.4"
+  dependencies:
+    "@supabase/node-fetch": "npm:^2.6.14"
+  checksum: 10/cd4a40f7febdd1eab6a2c1c7894eee183058a051e5a807fa73971872b693f796808374130acc35b00c9a91e06373db7cd893f773293e1270fd823fec53f004b0
+  languageName: node
+  linkType: hard
+
+"@supabase/node-fetch@npm:2.6.15, @supabase/node-fetch@npm:^2.6.14":
+  version: 2.6.15
+  resolution: "@supabase/node-fetch@npm:2.6.15"
+  dependencies:
+    whatwg-url: "npm:^5.0.0"
+  checksum: 10/ba6149b2fb3e3826f596b38e92db94fe8193fe061e02bb55af6f475d3a892041ac61d89a47fc2a926a48a57789dfd2129d01a17a76318ef3c47b3321711b2e26
+  languageName: node
+  linkType: hard
+
+"@supabase/postgrest-js@npm:1.18.1":
+  version: 1.18.1
+  resolution: "@supabase/postgrest-js@npm:1.18.1"
+  dependencies:
+    "@supabase/node-fetch": "npm:^2.6.14"
+  checksum: 10/c45ad2eac026d29b7d4ce00e5e68be02295eb6b7b8769541cd97c9030ac36ebbca21eb0729326365c002d97c66f77c1977d1cc86a71a5e7b29af74559a56bcdf
+  languageName: node
+  linkType: hard
+
+"@supabase/realtime-js@npm:2.11.2":
+  version: 2.11.2
+  resolution: "@supabase/realtime-js@npm:2.11.2"
+  dependencies:
+    "@supabase/node-fetch": "npm:^2.6.14"
+    "@types/phoenix": "npm:^1.5.4"
+    "@types/ws": "npm:^8.5.10"
+    ws: "npm:^8.18.0"
+  checksum: 10/de8ddbda47c057ae3e8090172f90f410c077849856250988b8c4ed3c8a78107849d90940ef795606a10c4d2d1ed795c6d0c51f7147252df04b86c6aae14f8338
+  languageName: node
+  linkType: hard
+
+"@supabase/storage-js@npm:2.7.1":
+  version: 2.7.1
+  resolution: "@supabase/storage-js@npm:2.7.1"
+  dependencies:
+    "@supabase/node-fetch": "npm:^2.6.14"
+  checksum: 10/f3f07e841cbad648afc0a82387609f951c8f59da849d927d26dfb81ef66a4f9343375c132fcb29edf8d51c9c13fcb9b0cfe64e13e9f1bbe1c1aa5a1d365d6716
+  languageName: node
+  linkType: hard
+
+"@supabase/supabase-js@npm:^2.48.1":
+  version: 2.48.1
+  resolution: "@supabase/supabase-js@npm:2.48.1"
+  dependencies:
+    "@supabase/auth-js": "npm:2.67.3"
+    "@supabase/functions-js": "npm:2.4.4"
+    "@supabase/node-fetch": "npm:2.6.15"
+    "@supabase/postgrest-js": "npm:1.18.1"
+    "@supabase/realtime-js": "npm:2.11.2"
+    "@supabase/storage-js": "npm:2.7.1"
+  checksum: 10/15fb731c31f9d1973cb26f9408b72b335900932ea8326ef46f8cb3548a3a136d4efa585d1e9cee6d1e14acce075f67c9e364d6243505e2c652f5d660b261165e
+  languageName: node
+  linkType: hard
+
 "@tanstack/query-core@npm:5.66.0":
   version: 5.66.0
   resolution: "@tanstack/query-core@npm:5.66.0"
@@ -3717,6 +3788,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/phoenix@npm:^1.5.4":
+  version: 1.6.6
+  resolution: "@types/phoenix@npm:1.6.6"
+  checksum: 10/9dc897cb9a4cd62f7a0de48855e6cafded5c676e7d78c4d3a9ade4f21ec82b95eb7195caada26a9a3a5d9aba14f0fd875bc3898e086234b20da63991a033f6e8
+  languageName: node
+  linkType: hard
+
 "@types/react-native-web@npm:^0":
   version: 0.19.0
   resolution: "@types/react-native-web@npm:0.19.0"
@@ -3756,6 +3834,15 @@ __metadata:
   version: 4.0.5
   resolution: "@types/tough-cookie@npm:4.0.5"
   checksum: 10/01fd82efc8202670865928629697b62fe9bf0c0dcbc5b1c115831caeb073a2c0abb871ff393d7df1ae94ea41e256cb87d2a5a91fd03cdb1b0b4384e08d4ee482
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^8.5.10":
+  version: 8.5.14
+  resolution: "@types/ws@npm:8.5.14"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10/956692dd47d5fe042780f61a6310d47203d07622aa185ef2eee7e849f9e7d1e5c190b0d8db8c3ab204a8829e3603b6c6bcab9024cd11dffdd5ffc0df9fd83f2d
   languageName: node
   linkType: hard
 
@@ -4251,10 +4338,12 @@ __metadata:
   resolution: "app@workspace:packages/app"
   dependencies:
     "@quidone/react-native-wheel-picker": "npm:^1.4.0"
+    "@supabase/supabase-js": "npm:^2.48.1"
     "@tanstack/react-query": "npm:^5.66.0"
     "@types/react-native-web": "npm:^0"
     axios: "npm:^1.7.9"
     date-fns: "npm:^4.1.0"
+    expo-apple-authentication: "npm:^7.1.3"
     moti: "npm:^0.30.0"
     react-i18next: "npm:^15.4.0"
     react-native-calendars: "npm:^1.1308.1"
@@ -5684,6 +5773,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.26.7"
     "@eslint/js": "npm:^9.19.0"
+    "@supabase/supabase-js": "npm:^2.48.1"
     "@tanstack/react-query": "npm:^5.66.0"
     "@types/react": "npm:^19.0.8"
     "@types/react-native": "npm:^0.73.0"
@@ -6942,6 +7032,16 @@ __metadata:
     react-native-webview: "npm:13.12.5"
   languageName: unknown
   linkType: soft
+
+"expo-apple-authentication@npm:^7.1.3":
+  version: 7.1.3
+  resolution: "expo-apple-authentication@npm:7.1.3"
+  peerDependencies:
+    expo: "*"
+    react-native: "*"
+  checksum: 10/a076ec81a78aaaeac11928f865545f84d53cd17e03c5bc754b888e17ccb3ae026e10decbf250cf6fd5463cf34d2338d3c1e2b2717ba0bc195840c885962b5ee7
+  languageName: node
+  linkType: hard
 
 "expo-application@npm:~6.0.2":
   version: 6.0.2
@@ -15996,7 +16096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.11.0, ws@npm:^8.12.1":
+"ws@npm:^8.11.0, ws@npm:^8.12.1, ws@npm:^8.18.0":
   version: 8.18.0
   resolution: "ws@npm:8.18.0"
   peerDependencies:
