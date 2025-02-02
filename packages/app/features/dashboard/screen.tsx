@@ -1,6 +1,8 @@
 import { NativeScrollEvent, NativeSyntheticEvent, View } from "react-native";
 import { useEffect, useState } from "react";
 import Container from "app/design/container";
+import CustomImage from "app/design/custom-image";
+import { Calendar } from "app/design/calendar";
 
 const DashboardScreen = () => {
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -16,7 +18,10 @@ const DashboardScreen = () => {
 
   return (
     <Container onScroll={handleScroll}>
-      <></>
+      <Calendar
+        headerTitle="캘린더"
+        onDateSelect={(date) => console.log("Selected: ", date)}
+      />
     </Container>
   );
 };
