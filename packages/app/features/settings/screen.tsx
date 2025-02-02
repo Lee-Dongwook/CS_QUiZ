@@ -37,11 +37,50 @@ export function SettingScreen() {
     }
   };
 
+  const handleChangeName = (text: string) => {
+    setName(text);
+  };
+
+  const handleChangeNickname = (text: string) => {
+    setNickname(text);
+    console.log(`Name changed to ${name}`);
+  };
+
   return (
     <Container>
       <View className="p-4">
         <View className="mt-4">
-          <TouchableOpacity></TouchableOpacity>
+          <TouchableOpacity>
+            {selectedImage ? (
+              <CustomImage
+                src={selectedImage}
+                contentFit="contain"
+                style={{ width: 100, height: 100 }}
+              />
+            ) : (
+              <></>
+            )}
+          </TouchableOpacity>
+
+          <View className="p-2">
+            <Typography variant="t2">이름</Typography>
+            <TextInput
+              value={name}
+              placeholder="이름"
+              onChangeText={handleChangeName}
+              className="font-pretendard mt-3 h-10 w-full rounded-xl bg-background px-6 font-bold text-black"
+            />
+          </View>
+
+          <View className="p-2">
+            <Typography variant="t2">닉네임</Typography>
+            <TextInput
+              value={nickname}
+              placeholder="닉네임"
+              onChangeText={handleChangeNickname}
+              className="font-pretendard mt-3 h-10 w-full rounded-xl bg-background px-6 font-bold text-black"
+            />
+          </View>
         </View>
       </View>
     </Container>
