@@ -1,0 +1,26 @@
+{
+    "expo" : {
+        "owner": "Lee-DongWook",
+        "name": "cs_quiz",
+        "slug": "cs_quiz",
+        "version": "1.0.0",
+        "scheme": "cs_quiz",
+        "platforms": [
+            "ios",
+            "android"
+        ],
+        "orientation": "portrait",
+        "ios": {
+
+        },
+        "android": {
+
+        },
+        "userInterfaceStyle": "automatic",
+        "plugins": [
+            [
+                "expo-build-properties"
+            ]
+        ]
+    }
+}

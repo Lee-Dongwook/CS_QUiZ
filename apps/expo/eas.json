@@ -1,0 +1,34 @@
+{
+    "cli": {
+      "version": ">= 10.1.1"
+    },
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal"
+      },
+      "preview:ios": {
+        "distribution": "internal",
+        "ios": {
+          "enterpriseProvisioning": "universal"
+        }
+      },
+      "preview:android": {
+        "distribution": "internal",
+        "android": {
+          "buildType": "apk"
+        }
+      },
+      "development-simulator": {
+        "developmentClient": true,
+        "distribution": "internal",
+        "ios": {
+          "simulator": true
+        }
+      },
+      "production": {}
+    },
+    "submit": {
+      "production": {}
+    }
+  }
