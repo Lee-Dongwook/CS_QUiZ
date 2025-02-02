@@ -39,6 +39,7 @@
         "native:build": "cd apps/expo && npx expo prebuild",
         "native:ipa": "cd apps/expo && eas build --profile preview:ios --platform ios --local",
         "native:apk": "cd apps/expo && eas build --profile preview:android --platform android --local",
+        "open:xcode": "cd apps/expo/ios && open csquiz.xcworkspace",
         "web": "cd apps/next && yarn next"
     },
     "resolutions": {

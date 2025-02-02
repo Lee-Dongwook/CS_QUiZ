@@ -20,7 +20,21 @@
     "userInterfaceStyle": "automatic",
     "plugins": [
       [
-        "expo-build-properties"
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0",
+            "enableProguardInReleaseBuilds": true,
+            "kotlinVersion": "1.9.21",
+            "usesCleartextTraffic": true
+          },
+          "ios": {
+            "deploymentTarget": "15.1",
+            "useFrameworks": "static"
+          }
+        }
       ]
     ]
   }
