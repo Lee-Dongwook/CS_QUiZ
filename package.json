@@ -25,5 +25,34 @@
         "tailwindcss": "3.4.15",
         "typescript": "^5.7.3",
         "typescript-eslint": "^8.22.0"
+    },
+    "scripts": {
+        "postinstall": "patch-package",
+        "native": "cd apps/expo && npx expo start --dev-client",
+        "native:tunnel": "cd apps/expo && npx expo start --dev-client --tunnel",
+        "native:metro:clear": "cd apps/expo && npx expo start --dev-client --clear",
+        "native:android": "cd apps/expo && yarn android --device",
+        "native:ios": "cd apps/expo && yarn ios --device",
+        "native:prod:android": "cd apps/expo && yarn android --device --variant release",
+        "native:prod:ios": "cd apps/expo && yarn ios --device --configuration Release",
+        "native:clean": "cd apps/expo && npx expo prebuild --clean",
+        "native:build": "cd apps/expo && npx expo prebuild",
+        "native:ipa": "cd apps/expo && eas build --profile preview:ios --platform ios --local",
+        "native:apk": "cd apps/expo && eas build --profile preview:android --platform android --local",
+        "web": "cd apps/next && yarn next"
+    },
+    "resolutions": {
+        "metro": "~0.76.7",
+        "metro-resolver": "~0.76.7"
+    },
+    "nohoist": [
+        "**/expo-router",
+        "**/expo-router/**"
+    ],
+    "dependencies": {
+        "@tanstack/react-query": "^5.66.0",
+        "axios": "^1.7.9",
+        "nativewind": "^4.1.23",
+        "zustand": "^5.0.3"
     }
 }
