@@ -1,19 +1,27 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * import {onCall} from "firebase-functions/v2/https";
- * import {onDocumentWritten} from "firebase-functions/v2/firestore";
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+/* eslint-disable object-curly-spacing */
+import dotenv from "dotenv";
+dotenv.config();
+import "express-async-errors";
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import admin from "firebase-admin";
+import { onRequest } from "firebase-functions/v2/https";
 
-import {onRequest} from "firebase-functions/v2/https";
-import * as logger from "firebase-functions/logger";
+const app = express();
 
-// Start writing functions
-// https://firebase.google.com/docs/functions/typescript
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 
-// export const helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+app.use(helmet());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+export const startServer = onRequest(
+  { region: "asia-northeast3", timeoutSeconds: 540 },
+  app
+);
