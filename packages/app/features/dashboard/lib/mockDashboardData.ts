@@ -27,4 +27,9 @@ export const mockDashboardData = {
     { id: "q2", title: "React Hooks 마스터", difficulty: "Medium" },
     { id: "q3", title: "Next.js 렌더링 방식", difficulty: "Hard" },
   ],
+  checkList: [
+    { id: "1", title: "오늘의 퀴즈 풀기 (5문제)", completed: false },
+    { id: "2", title: "틀린 문제 다시 풀기", completed: false },
+    { id: "3", title: "데일리 챌린지 도전", completed: false },
+  ],
 };

@@ -14,16 +14,19 @@ const ProgressBar = (props: ProgressBarProps) => {
   const clampedProgress = Math.min(Math.max(progress, 0), 100);
 
   return (
-    <View className="w-full p-4 overflow-hidden rounded-full bg-[#E4E4E4] items-center justify-center">
-      <Text className="">{label}</Text>
-      <View
-        className={`rounded-full ${color}`}
-        style={{
-          backgroundColor: color,
-          width: `${clampedProgress}%`,
-          height: height,
-        }}
-      />
+    <View className="mt-4">
+      <Text className="mb-2 font-bold text-lg">
+        {label} {progress}%
+      </Text>
+      <View className="w-full overflow-hidden rounded-full bg-[#E4E4E4] justify-center">
+        <View
+          className={`rounded-full ${color}`}
+          style={{
+            width: `${clampedProgress}%`,
+            height: height,
+          }}
+        />
+      </View>
     </View>
   );
 };
