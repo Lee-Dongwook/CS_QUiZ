@@ -6,6 +6,7 @@ import {
   FlatList,
 } from "react-native";
 import { useEffect, useState } from "react";
+import { BarChart } from "react-native-gifted-charts";
 import { Button } from "app/design/button";
 import Container from "app/design/container";
 import CustomImage from "app/design/custom-image";
@@ -20,6 +21,16 @@ import RealTimeUserAccuracyCard from "./components/real-time-user-accuracy-card"
 const DashboardScreen = () => {
   const [data, setData] = useState(mockDashboardData);
   const [quiz, setQuiz] = useState(mockQuizData);
+
+  const barChartData = [
+    { value: 2, label: "Mon" },
+    { value: 3, label: "Tue" },
+    { value: 1, label: "Wed" },
+    { value: 4, label: "Thu" },
+    { value: 2.5, label: "Fri" },
+    { value: 3.5, label: "Sat" },
+    { value: 5, label: "Sun" },
+  ];
 
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const { layoutMeasurement, contentOffset, contentSize } = event.nativeEvent;
@@ -48,6 +59,23 @@ const DashboardScreen = () => {
           <Text className="text-sm text-gray-900">
             LV. {data.user.level} | XP: {data.user.xp} | 랭킹: {data.user.rank}
             위
+          </Text>
+        </View>
+
+        {/* 사용자 활동 요약 */}
+        <View className="mt-2 p-4 bg-white shadow-md rounded-lg mb-4 items-center">
+          <Text className="text-lg font-bold">최근 학습 활동</Text>
+          <BarChart
+            data={barChartData}
+            barWidth={20}
+            barBorderRadius={4}
+            yAxisThickness={0}
+            xAxisThickness={0}
+            hideRules
+            height={200}
+          />
+          <Text className="text-blue-700 text-sm mt-2">
+            최근 7일간 학습 기록 (단위: 시간)
           </Text>
         </View>
 
