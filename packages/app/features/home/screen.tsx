@@ -12,6 +12,7 @@ import {
 import { useRouter } from "solito/router";
 import { Typography } from "app/design/typography";
 import { AppleLoginButton } from "app/auth/supabase/apple/AppleLoginButton";
+import { GoogleLoginButton } from "app/auth/supabase/google/GoogleLoginButton";
 
 export function HomeScreen() {
   const { push } = useRouter();
@@ -43,6 +44,9 @@ export function HomeScreen() {
             <AppleLoginButton onError={handleLoginError} />
           </View>
         )}
+        {/* <View>
+          <GoogleLoginButton onError={handleLoginError} />
+        </View> */}
       </View>
     </>
   );

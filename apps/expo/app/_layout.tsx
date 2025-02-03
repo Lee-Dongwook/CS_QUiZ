@@ -58,7 +58,12 @@ export default function Root() {
         <StatusBar style="dark" />
         <SafeAreaView style={styles.container}>
           <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="(main)" />
             <Stack.Screen name="index" />
+            <Stack.Screen
+              name="camera-screen"
+              options={{ gestureEnabled: false }}
+            />
           </Stack>
         </SafeAreaView>
         <AppsFlyerHandler />

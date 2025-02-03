@@ -21,6 +21,11 @@ import {
   useCodeScanner,
 } from "react-native-vision-camera";
 
+import * as ImagePicker from "expo-image-picker";
+import { uploadFiles } from "../utils/tus";
+import { StatusBar } from "expo-status-bar";
+import axiosInstance from "app/api/axiosInstance";
+
 export default function CameraScreen() {
   const { top, bottom } = useSafeArea();
   const device = useCameraDevice("back");
@@ -29,6 +34,8 @@ export default function CameraScreen() {
   const [mode, setMode] = useState("");
   const [cameraPermissionStatus, setCameraPermissionStatus] =
     useState<CameraPermissionStatus>("not-determined");
+
+  const [isUploading, setIsUploading] = useState(false);
 
   const requestCameraPermission = async () => {
     const permission = await Camera.requestCameraPermission();
@@ -78,6 +85,56 @@ export default function CameraScreen() {
 
     initialize();
   }, []);
+
+  const handleAlbumPress = async () => {
+    try {
+      const permissionResult =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+      if (permissionResult.status === "denied") {
+        Alert.alert(
+          "앨범 접근 권한 필요",
+          "앨범에서 사진을 선택하기 위해 권한이 필요합니다.",
+          [
+            { text: "취소" },
+            { text: "설정으로 이동", onPress: () => Linking.openSettings() },
+          ]
+        );
+        return;
+      }
+
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        quality: 1,
+        allowsMultipleSelection: false,
+      });
+
+      if (!result.canceled) {
+        setIsUploading(true);
+        try {
+          await uploadFiles("test", result);
+        } catch (error) {
+          Alert.alert("오류", "이미지 업로드 중 문제가 발생했습니다.");
+        } finally {
+          setIsUploading(false);
+        }
+      }
+    } catch (error) {
+      Alert.alert("오류", "이미지를 선택하는 중 문제가 발생했습니다.");
+    }
+  };
+
+  const onClose = useCallback(() => {
+    router.back();
+  }, []);
+
+  const codeScanner = useCodeScanner({
+    codeTypes: ["qr", "ean-13"],
+    onCodeScanned: (codes) => {
+      console.log(codes);
+    },
+  });
 
   return (
     <>
